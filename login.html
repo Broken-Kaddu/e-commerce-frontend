@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOJA : Login</title>
+    <link rel="stylesheet" href="/signstuff/style.css">
+    <style>
+        body {
+            background-image: url('/signstuff/img2.jpg'); /* add your background image here */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="container1">
+            <h1 class="head">Login</h1>
+            <div class="input-group">
+                <label for="Username">Enter your Username:</label>
+                <input type="text" placeholder="Username" name="Username" id="Username" class="subc">
+            </div>
+            <div class="input-group">
+                <label for="npassword">Enter the password:</label>
+                <input type="password" placeholder="password" name="npassword" id="npassword" class="subc">
+            </div>
+            <button id="button" onclick="submission()">Submit</button>
+            <p id="acc">Already having account ! <a href="reigster.html" style="text-decoration: none; color: aqua;">click here</a></p>
+
+        </div>
+    </form>
+</body>
+</html>
+
+<script>
+    function submission() {
+        event.preventDefault(); // Prevent form submission
+        const username = document.getElementById("Username").value;
+        const password = document.getElementById("npassword").value;
+
+        if (password.trim() === "") {
+            alert("All fields are required!");
+            return;
+        }
+        if (username.length < 5) {
+            alert("Username must be at least 5 characters long!");
+            return;
+        }
+        // Assuming validation is successful, navigate to the next page
+        window.location.href = 'index.html';
+    }
+</script>
+</body>
+</html>
